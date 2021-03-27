@@ -1,0 +1,14 @@
+    - name: Desactivation de SELinux
+      selinux: state=disabled
+
+    - name: Configuration du firewall
+      firewalld: 
+        zone: public 
+        service: http 
+        permanent: yes
+        state: enabled
+
+    - name: Reload Firewall
+      systemd: 
+        name: firewalld 
+        state: reloaded

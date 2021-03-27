@@ -1,0 +1,15 @@
+modulesphp: [ 'php', 'php-curl', 'php-gd', 'php-mbstring', 'php-xml', 'php-xmlrpc', 'php-soap', 'php-intl', 'php-zip' ]
+
+modulessql: [ 'mariadb-server', 'php-mysqlnd', 'python3-PyMySQL', 'MySQL-python' ]
+
+port: "80"
+
+MDProot: "password"
+db: "wordpressdb"
+userwp: "wordpressuser"
+passwordwp: "password"
+
+URL: "jeremy.wordpress.com"
+
+config: "jeremy.wordpress.com.conf"
+

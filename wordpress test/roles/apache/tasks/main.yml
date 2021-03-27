@@ -1,0 +1,27 @@
+- name: Installation httpd
+  yum: 
+    name: httpd 
+    update_cache: yes
+    state: latest
+ 
+- name: Démarrage httpd
+  systemd: 
+    name: httpd 
+    state: started 
+    enabled: yes
+ 
+- name: Creation dossier Apache
+  file:
+    path: "/var/www/{{ URL }}"
+    state: directory
+    owner: "apache"
+    group: "apache"
+    mode: '0755'
+ 
+- name: Copie du fichier conf
+  template:
+    src: "./httpd.conf"
+    dest: "/etc/httpd/conf.d/{{ config }}"
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
